@@ -1,12 +1,12 @@
 (ns examples-cljs.read-stream)
 
-(defonce ble
+(defonce opts
   {:start (fn [controller]
             (do
               (js/console.log "starting")
               (js/setInterval #(.enqueue controller "abc") 1000)))})
 
-(-> (clj->js ble)
+(-> (clj->js opts)
     (js/ReadableStream.)
     (.getReader)
     (.read)
