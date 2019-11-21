@@ -1,5 +1,6 @@
 (ns examples-cljs.core
-    (:require [examples-cljs.read-stream]))
+  (:require [examples-cljs.read-stream]
+            [examples-cljs.request-animation-frame]))
 
 (enable-console-print!)
 
@@ -10,8 +11,4 @@
 (defonce app-state (atom {:text "Hello world!"}))
 
 
-(defn on-js-reload []
-  ;; optionally touch your app-state to force rerendering depending on
-  ;; your application
-  ;; (swap! app-state update-in [:__figwheel_counter] inc)
-)
+(defn on-js-reload [])
